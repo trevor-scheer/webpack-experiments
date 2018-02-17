@@ -10,5 +10,9 @@ module.exports = {
   resolveLoader: {
     modules: ['node_modules', path.resolve(__dirname, 'loaders')]
   },
-  plugins: []
+  plugins: [
+    new webpack.NormalModuleReplacementPlugin(/@feature/, function(resource) {
+      resource.request = resource.request.replace(/@feature\//, 'feature!?');
+    })
+  ]
 };
