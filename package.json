@@ -1,0 +1,16 @@
+{
+  "name": "webpack-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack",
+    "debug": "node --inspect-brk $(npm bin)/webpack --verbose"
+  },
+  "devDependencies": {
+    "chalk": "^2.3.1",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
