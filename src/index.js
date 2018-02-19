@@ -1,6 +1,4 @@
 import wf from './wf';
-import a from './a';
-import b from './b';
 
 import feature1 from '@feature/feature1';
 import feature2 from '@feature/feature2';
