@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack",
+    "go": "webpack && node ./dist/main.chunk.js",
     "debug": "node --inspect-brk $(npm bin)/webpack --verbose"
   },
   "devDependencies": {
