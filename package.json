@@ -7,7 +7,8 @@
     "dev": "webpack-dev-server",
     "build": "webpack",
     "go": "webpack && node ./dist/main.chunk.js",
-    "debug": "node --inspect-brk $(npm bin)/webpack --verbose"
+    "debug": "node --inspect-brk $(npm bin)/webpack --verbose",
+    "debug:output": "webpack && node --inspect-brk ./dist/main.chunk.js"
   },
   "devDependencies": {
     "chalk": "^2.3.1",
