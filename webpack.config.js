@@ -10,5 +10,23 @@ module.exports = {
   resolveLoader: {
     modules: ['node_modules', path.resolve(__dirname, 'loaders')]
   },
-  plugins: []
+
+  resolve: {
+    modules: [
+      path.join(__dirname, 'node_modules'),
+
+      // Webpack can't resolve the css_loader without this :thinking_face:
+      path.resolve(__dirname, 'src')
+    ]
+  },
+  plugins: [
+    new webpack.NormalModuleReplacementPlugin(/@styles/, function(resource) {
+      resource.request = resource.request.replace(/@styles\//, 'styles!?');
+    }),
+    new webpack.NormalModuleReplacementPlugin(/styles!\.\//, function(
+      resource
+    ) {
+      resource.request = resource.request.replace(/styles!\.\//, 'styles!?');
+    })
+  ]
 };
