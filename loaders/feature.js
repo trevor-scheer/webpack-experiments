@@ -3,10 +3,14 @@
 // {default: true/false}
 module.exports = function(source, map) {
   if (this.resourceQuery) {
-    const name = this.resourceQuery.slice().replace('?', '');
+    const key = this.resourceQuery.slice().replace('?', '');
     return `
-      let _global = typeof window === 'undefined' ? global : window;
-      module.exports = _global.wf ? _global.wf.appData.features.${name} : false;
+      define('${this.resourceQuery}', [], function() {
+        let _g = typeof window === 'undefined' ? global : window;
+        return (
+          !!(_g && _g.wf && _g.wf.features && _g.wf.features.${key}) || false
+        );
+      });
     `;
   } else {
     return `
