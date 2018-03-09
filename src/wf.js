@@ -5,7 +5,11 @@ define('wf', [], function() {
       feature1: true,
       feature2: false,
       feature3: true,
-      feature4: false
+      feature4: false,
+      libra: {
+        test1: true,
+        test2: false
+      }
     }
   };
 

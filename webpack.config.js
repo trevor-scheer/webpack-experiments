@@ -13,6 +13,9 @@ module.exports = {
   plugins: [
     new webpack.NormalModuleReplacementPlugin(/@feature/, function(resource) {
       resource.request = resource.request.replace(/@feature\//, 'feature!?');
+    }),
+    new webpack.NormalModuleReplacementPlugin(/@libra/, function(resource) {
+      resource.request = resource.request.replace(/@libra\//, 'libra!?');
     })
   ]
 };
