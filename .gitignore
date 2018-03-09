@@ -1,4 +1,8 @@
 node_modules
 .DS_Store
 dist
+<<<<<<< HEAD
 *.log
+=======
+npm-debug.log
+>>>>>>> feature-loader
